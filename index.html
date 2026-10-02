@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twenty8-Production | Coding Job Application</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav container">
+      <div class="logo">Twenty8<span>-Production</span></div>
+      <div class="top-actions">
+        <button id="themeToggle" class="icon-btn" title="Toggle theme">🌙</button>
+        <button id="settingsBtn" class="icon-btn settings-icon" title="Settings" aria-label="Open settings">⚙</button>
+      </div>
+    </nav>
+    <div class="hero-content container">
+      <p class="eyebrow">CODING VACANCY</p>
+      <h1>Apply for your next opportunity.</h1>
+      <p>Complete the application below and track your application status from the settings menu.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">JOB APPLICATION</p>
+          <h2>Applicant details</h2>
+        </div>
+        <span class="required-note">* Required</span>
+      </div>
+
+      <form id="jobForm">
+        <div class="grid">
+          <label>Full Name *
+            <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+          </label>
+          <label>ID / Passport Number *
+            <input type="text" id="idNumber" name="idNumber" required placeholder="e.g. 12345678">
+          </label>
+
+          <label>Gender *
+            <select id="gender" name="gender" required>
+              <option value="">Select gender</option>
+              <option>Male</option><option>Female</option><option>Prefer not to say</option>
+            </select>
+          </label>
+          <label>Country *
+            <input type="text" id="country" name="country" required value="Kenya">
+          </label>
+
+          <label>Phone Number *
+            <input type="tel" id="phone" name="phone" required placeholder="+254 7XX XXX XXX">
+          </label>
+          <label>Email Address *
+            <input type="email" id="email" name="email" required placeholder="you@example.com">
+          </label>
+
+          <label>Position Applied For *
+            <input type="text" id="position" name="position" required value="Coding / Software Development">
+          </label>
+          <label>Profile Picture *
+            <input type="file" id="photo" name="photo" accept="image/*" required>
+          </label>
+
+          <label class="full">Upload CV *
+            <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+            <small>Accepted: PDF, DOC, DOCX — maximum 5 MB</small>
+          </label>
+
+          <label class="full">Cover Letter
+            <textarea id="coverLetter" name="coverLetter" rows="6" placeholder="Tell the employer why you are suitable for the position..."></textarea>
+          </label>
+        </div>
+
+        <label class="check">
+          <input type="checkbox" id="consent" required>
+          I confirm that the information provided is accurate and may be used for recruitment purposes.
+        </label>
+
+        <div class="form-actions">
+          <button type="button" id="saveBtn" class="secondary-btn">💾 Save Changes</button>
+          <button type="submit" class="submit-btn">Submit Application</button>
+        </div>
+        <div id="message" class="message" role="status"></div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Settings drawer -->
+  <div id="overlay" class="overlay"></div>
+  <aside id="settingsPanel" class="settings-panel" aria-label="Application settings">
+    <div class="settings-head">
+      <h2>Settings</h2>
+      <button id="closeSettings" class="close-btn" aria-label="Close settings">×</button>
+    </div>
+
+    <div class="status-card">
+      <p class="eyebrow">APPLICATION STATUS</p>
+      <div id="statusBadge" class="status-badge pending">Pending</div>
+      <p id="statusDescription">Your application has not yet been verified by the recruitment team.</p>
+    </div>
+
+    <button id="helpBtn" class="menu-item">🆘 <span><strong>Seek for help</strong><small>Get assistance with your application</small></span></button>
+    <button id="aboutBtn" class="menu-item">🏢 <span><strong>More about the company</strong><small>View Twenty8-Production information</small></span></button>
+    <a class="menu-item" href="https://wa.me/254706756141?text=Hello%20Twenty8-Production%2C%20I%20need%20help%20with%20my%20job%20application." target="_blank" rel="noopener">💬 <span><strong>Contact admin on WhatsApp</strong><small>+254 706 756 141</small></span></a>
+    <button id="saveSettingsBtn" class="menu-item">💾 <span><strong>Save changes</strong><small>Save application details on this device</small></span></button>
+    <button id="viewApplicationBtn" class="menu-item">📋 <span><strong>View application</strong><small>Check pending or verified status</small></span></button>
+
+    <div class="theme-setting">
+      <label>Theme
+        <select id="themeSelect">
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+        </select>
+      </label>
+    </div>
+
+    <div id="settingsMessage" class="message"></div>
+  </aside>
+
+  <!-- Help modal -->
+  <div id="helpModal" class="modal">
+    <div class="modal-box">
+      <button class="modal-close" data-close="helpModal">×</button>
+      <h2>Seek for Help</h2>
+      <p>For assistance with your application, contact the recruitment administrator through WhatsApp.</p>
+      <a class="whatsapp" href="https://wa.me/254706756141?text=Hello%20Twenty8-Production%2C%20I%20need%20assistance%20with%20my%20job%20application." target="_blank" rel="noopener">💬 WhatsApp +254 706 756 141</a>
+    </div>
+  </div>
+
+  <!-- Company modal -->
+  <div id="aboutModal" class="modal">
+    <div class="modal-box">
+      <button class="modal-close" data-close="aboutModal">×</button>
+      <p class="eyebrow">ABOUT THE COMPANY</p>
+      <h2>Twenty8-Production</h2>
+      <p>Twenty8-Production is presented through this portal as a coding and technology recruitment opportunity. Applicants can submit their details and CV, save their progress on their device, and check the current application status.</p>
+      <p class="note">Application status shown here is a front-end status. Final verification should be connected to the recruitment team's secure backend.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">© 2026 Twenty8-Production. All rights reserved.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

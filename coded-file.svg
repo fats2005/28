@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+<rect width="1600" height="1000" fill="#06101d"/>
+<g fill="#31d7ff" font-family="monospace" font-size="28" opacity=".70">
+<text x="70" y="90">01  const application = await submitCandidate(data);</text>
+<text x="70" y="140">02  if (!application.cv) return error("CV required");</text>
+<text x="70" y="190">03  function verifyCandidate(candidate) {</text>
+<text x="120" y="240">return candidate.email &amp;&amp; candidate.cv;</text>
+<text x="70" y="290">04  }</text>
+<text x="70" y="370">05  class Twenty8Production {</text>
+<text x="120" y="420">saveApplication(application);</text>
+<text x="120" y="470">checkApplicationStatus();</text>
+<text x="120" y="520">contactAdministrator();</text>
+<text x="70" y="570">06  // Coding job application portal</text>
+<text x="70" y="650">07  database.save(application);</text>
+<text x="70" y="700">08  notifyAdmin("New candidate received");</text>
+<text x="70" y="780">09  console.log("Application ready");</text>
+</g>
+<g fill="#9b7cff" font-family="monospace" font-size="28" opacity=".52">
+<text x="1030" y="160">&lt;form&gt;</text><text x="1090" y="210">&lt;input required&gt;</text>
+<text x="1090" y="260">&lt;select&gt;</text><text x="1090" y="310">&lt;option&gt;Kenya&lt;/option&gt;</text>
+<text x="1090" y="360">&lt;/select&gt;</text><text x="1090" y="410">&lt;input type="file"&gt;</text>
+<text x="1030" y="460">&lt;/form&gt;</text>
+</g></svg>
